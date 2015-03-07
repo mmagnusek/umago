@@ -1,0 +1,74 @@
+.header.text-center
+  nav
+    ul.nav.nav-pills
+      li = link_to 'Ubytování', root_path
+      li = link_to 'Pokoje',    rooms_path
+      li = link_to 'Okolí',     neighborhood_path
+      li.logo
+        strong
+          span.green U
+          span MAG
+          span.green O
+        br
+        span.small Ubytování v soukromí
+      li = link_to 'Fotogalerie', galerie_path
+      li = link_to 'Kontakt',     contact_path
+      li = link_to 'Rezervace',   reservation_path
+
+  h1 Ubytování na samotě
+  h2 Nedaleko centra města Náchod
+  = link_to 'Prohlédnout si pokoje', '#'
+
+= render 'carousel'
+
+.body
+  .left
+    .about
+      .text.text-left
+        span Umago
+        h3 Umago
+        p Výjimečné ubytování nedaleko od centra města Náchoda. Nezapomenutelnou dovolenou pro celou Vaši rodinu Vám zpříjemní travnaté hřiště, tenisový kurt, stolní tenis, ruské kuželky, dětský koutek a zahradní krb. Možnost houbaření a cykloturistika. Ubytování pro 8 osob. Ideální dovolená pro dvě rodiny.
+        .narrow.narrow-down
+      .image
+    .neighborhood.image
+      .text.text-justify
+        .narrow.narrow-left
+        h3 Kladské pomezí
+        hr
+        p Fusce dignissim, dolor vitae egestas sollicitudin, tortor neque ultrices nunc, a consectetur velit lorem id sem. In placerat pharetra dui eu luctus.
+        p Fusce dignissim, dolor vitae egestas sollicitudin, tortor neque ultrices nunc, a consectetur velit lorem id sem. In placerat pharetra dui eu luctus.
+  .right
+    .rooms.image
+      .text.text-justify.text-center
+        .narrow.narrow-top
+        h3 Naše pokoje
+        hr
+        p Fusce dignissim, dolor vitae egestas sollicitudin, tortor neque ultrices nunc, a consectetur velit lorem id sem. In placerat pharetra dui eu luctus.
+    .why
+      .text.text-left
+        h3 Výjmečná dovolená pro rodinu
+        hr
+        p Fusce dignissim, dolor vitae egestas sollicitudin, tortor neque ultrices nunc, a consectetur velit lorem id sem. In placerat pharetra dui eu luctus. Fusce dignissim, dolor vitae egestas sollicitudin, tortor neque ultrices nunc, a consectetur velit lorem id sem. In placerat pharetra zdui eu luctus.
+      .image
+
+.central.text-center
+  h3 Fusce dignissim, dolor vi
+  h4 Fusce dignissim, dolor vitae egestas sollicitudin,
+  p Fusce dignissim, dolor vitae egestas sollicitudin, tortor neque ultrices nunc, a consectetur velit lorem id sem. In placerat pharetra dui eu luctus. Fusce dignissim, dolor vitae egestas sollicitudin, tortor neque ultrices nunc, a consectetur velit lorem id sem. In placerat pharetra zdui eu luctus.
+
+.contact
+  .gmap = render 'gmap'
+
+  .address
+    h3 Kontaktujte nás
+    ul.list-unstyled
+      li Milan Magnusek
+      li Ve Smrčinách 60
+      li 547 01 Náchod
+      br
+      li
+        | (+420) 775 032 668
+      li = mail_to 'umago@seznam.cz'
+.footer
+  p Umago.cz all rights reserved 2014
+  p Milan Magnusek, Ve Smrčinách 60, NÁCHOD 547 01
