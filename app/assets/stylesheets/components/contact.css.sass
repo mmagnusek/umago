@@ -1,0 +1,24 @@
+.contact
+  +clearfix()
+  background-image: image-url('address_bg.png')
+
+  .gmap
+    width: percentage(7 / 12)
+    float: left
+    padding: 0
+    margin: 0
+    height: 300px
+    @media (max-width: $screen-sm-max)
+      width: 100%
+    iframe
+      width: 100%
+      height: 300px
+  .address
+    width: percentage(5 / 12)
+    float: left
+    color: white
+    padding: 10px 40px
+    a
+      color: #edc924
+    @media (max-width: $screen-sm-max)
+      width: 100%

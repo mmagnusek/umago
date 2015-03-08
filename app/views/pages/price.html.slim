@@ -1,0 +1,53 @@
+- content_for :extra_body_classes, 'top-bg'
+
+.header.text-center
+  = render 'navigation'
+
+.container
+  .row
+    .col-md-8.col-md-offset-2
+      span
+      h3 Ceník
+      p
+        ' Cena zahrnuje pronájem objektu i kurtu včetně elektřiny.
+        ' Cena nezahrnuje lázéňský poplatek (10,- osoba/den starší 18-ti let) a spotřebu dřeva
+
+      div.help.text-center
+        span Ubytování od května do října
+
+      table.table.table-striped
+        thead
+          tr
+            th Období
+            th Cena
+        tbody
+          tr
+            td Hlavní sezóna - pouze týdenní pobyty
+            td.text-right 16 0000 Kč / týden
+          tr
+            td Květen, Červen, Září, Říjen
+            td.text-right 12 0000 Kč / týden
+          tr
+            td Víkendové pobyty
+            td.text-right 3 0000 Kč / týden
+
+      ul.price-options
+        li.col-md-6
+          span Nástup v sobotu po 15-té hodině
+        li.col-md-6
+          span Ukončení pobytu v sobotu do 10 hodin
+        li.col-md-6
+          span Kauce 5 000,-Kč (Vratná při odjezdu)
+        li.col-md-6
+          span Bez domácích zvířat
+        li.col-md-6
+          span Možnost připojení na Wi-Fi (internet)
+        li.col-md-6
+          span Povlečení si hosté vozí vlastní
+        li.col-md-6
+          span Vstup na tenisový kurt pouze ve speciální obuvi
+        li.col-md-6
+          span V případě znečištění objektu bude účtován závěrečný úklid 1000,-
+        li.col-md-6
+          span Každá osoba nad maximální počet (8) zpoplatněna 2000,- v hlavní sezóně, 1500,- mimo sezónu
+

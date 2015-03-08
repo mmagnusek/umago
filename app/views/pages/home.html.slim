@@ -1,19 +1,5 @@
-.header.text-center
-  nav
-    ul.nav.nav-pills
-      li = link_to 'Ubytování', root_path
-      li = link_to 'Pokoje',    rooms_path
-      li = link_to 'Okolí',     neighborhood_path
-      li.logo
-        strong
-          span.green U
-          span MAG
-          span.green O
-        br
-        span.small Ubytování v soukromí
-      li = link_to 'Fotogalerie', galerie_path
-      li = link_to 'Kontakt',     contact_path
-      li = link_to 'Rezervace',   reservation_path
+.header.text-center.homepage
+  = render 'navigation'
 
   h1 Ubytování na samotě
   h2 Nedaleko centra města Náchod
