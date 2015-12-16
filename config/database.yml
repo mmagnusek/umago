@@ -1,14 +1,10 @@
-default: &default
-  adapter: mysql2
-  encoding: utf8
-  pool: 5
-  username: root
-  password:
-  socket: /tmp/mysql.sock
-
-development:
-  <<: *default
+development: &default
+  adapter: postgresql
   database: umago_development
+  encoding: utf8
+  min_messages: warning
+  pool: 5
+  timeout: 5000
 
 test:
   <<: *default
