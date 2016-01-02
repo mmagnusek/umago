@@ -1,4 +1,24 @@
-@import url('//fonts.googleapis.com/css?family=Open+Sans:400,600,300,700,800&subset=latin,latin-ext')
+@font-face
+  font-family: 'Helvetica Neue'
+  src: asset-url('HelveticaNeueThin.ttf')
+  src: asset-url('HelveticaNeueThin.ttf?#iefix') format("embedded-opentype"), asset-url('HelveticaNeueThin.woff') format("woff"), asset-url('HelveticaNeueThin.svg') format("svg")
+  font-style: normal
+  font-weight: 300
+
+@font-face
+  font-family: 'Helvetica Neue'
+  src: asset-url('HelveticaNeueLight.ttf')
+  src: asset-url('HelveticaNeueLight.ttf?#iefix') format("embedded-opentype"), asset-url('HelveticaNeueLight.woff') format("woff"), asset-url('HelveticaNeueLight.svg') format("svg")
+  font-style: normal
+  font-weight: 400
+
+@font-face
+  font-family: 'Helvetica Neue'
+  src: asset-url('HelveticaNeueBold.ttf')
+  src: asset-url('HelveticaNeueBold.ttf?#iefix') format("embedded-opentype"), asset-url('HelveticaNeueBold.woff') format("woff"), asset-url('HelveticaNeueBold.svg') format("svg")
+  font-style: normal
+  font-weight: 600
+
 
 @mixin antialiasing($type:antialiased)
   -webkit-font-smoothing: $type

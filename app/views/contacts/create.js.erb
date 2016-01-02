@@ -1,0 +1,10 @@
+<% if @contact.errors.any? %>
+  $('.contact-box').html("<%= escape_javascript render 'form' %>").fadeIn(300);
+  $('.contact-state').html("<%= escape_javascript render 'state' %>").fadeIn(300);
+<% else %>
+  $('.contact-box .contact-form-wrapper').fadeOut(200, function() {
+    $(this).html("<%= escape_javascript render partial: 'thanks' %>").fadeIn(200).delay(8000).fadeOut(200, function() {
+      $('.contact-box').html("<%= escape_javascript render partial: 'form' %>").fadeIn(200);
+    });
+  });
+<% end %>

@@ -1,0 +1,5 @@
+Description:
+    Stubs out a scaffolded ....
+
+Example:
+    `rails g blueberry:scaffold_controller Post title:string content:text published:boolean `

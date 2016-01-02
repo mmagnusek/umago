@@ -1,0 +1,28 @@
+nav
+  @extend .navbar-fixed-top
+  position: absolute
+  .nav
+    text-align: center
+    li
+      display: inline-block
+      a
+        color: white
+        &:hover,
+        &:focus
+          background: transparent
+
+      &.logo
+        position: relative
+        .green
+          color: $green-base
+        a
+          font-size: 50px
+          padding:
+            bottom: 0
+            top: 0
+          font-weight: 600
+        small
+          position: absolute
+          white-space: nowrap
+          transform: translateX(-50%) translateY(-50%)
+          color: white

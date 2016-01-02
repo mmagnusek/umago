@@ -1,0 +1,21 @@
+.pages-home
+  main
+    .wrapper
+      +display-flex
+      align-items: stretch
+      .left,
+      .right
+        +make-columns(md6)
+        padding: 0
+
+      .text
+        padding: 60px
+        hr
+          border: 1px solid $green-base
+          max-width: 100px
+          margin-left: 0
+      .why
+        background: asset_url('address_bg.png')
+        color: white
+        h3
+          color: white

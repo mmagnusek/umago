@@ -1,0 +1,18 @@
+doctype html
+html lang='cs'
+  head
+    title= page_title app_name: 'Umago'
+    meta charset='utf-8'
+    meta name='author' content='Martin Staněk, magnusekm@gmail.com'
+    meta name='viewport' content='width=device-width, initial-scale=1.0'
+
+    link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400&subset=latin,latin-ext' rel='stylesheet' type='text/css'
+
+    = render 'analytics'
+    = stylesheet_link_tag :application, :media => 'all'
+    = csrf_meta_tags
+
+  body class=body_class
+    main.container = yield
+    = javascript_include_tag :application
+    = yield :javascript

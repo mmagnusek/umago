@@ -1,0 +1,37 @@
+// css feeder
+=all-abs
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+
+=all-fix
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+
+=primary-gradient
+  +gradient-horizontal(#ee283d, #c70952, 0%, 100%)
+
+// media queries
+=render-to-order-fix-buttons
+  @media screen and (min-width: $screen-md) and (min-height: 808px)
+    @content
+
+=display-flex
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  justify-content: center
+  &:after,
+  &:before
+    display: none
+
+=centered
+  position: absolute
+  left: 50%
+  top: 50%
+  transform: translate3d(-50%,-50%,0)

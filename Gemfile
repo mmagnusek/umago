@@ -12,6 +12,7 @@ gem 'jquery-rails'
 gem 'kaminari'
 gem 'metamagic'
 gem 'pg'
+gem 'rails-i18n', '~> 4.0.0'
 gem 'rails', '~> 4.2.0'
 gem 'sassc-rails'
 gem 'simple_form'
@@ -21,8 +22,15 @@ gem 'uglifier', '>= 1.3.0'
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap-sass'
   gem 'rails-assets-jquery-ujs'
+  gem 'rails-assets-bxslider-4'
+  gem 'rails-assets-bootstrap-datepicker'
 end
 
+group :development do
+  gem 'awesome_print'
+  gem 'better_errors'
+  gem 'pry-rails'
+end
 
 group :development, :test do
   gem 'byebug'

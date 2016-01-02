@@ -1,0 +1,16 @@
+.booking-calendar
+  - [*1..12].each do |month|
+    .month-calendar
+      = calendar(year: Date.current.year, month: month) do |d|
+        - if @reservations.any? {|e| (e.date_from..e.date_to).include?(d)}
+
+          - if @reservations.any? {|e| (e.date_from..e.date_to).min == d} && @reservations.any? {|e| (e.date_from..e.date_to).max == d}
+            - [d.mday, class: 'booked full']
+          - elsif @reservations.any? {|e| (e.date_from..e.date_to).min == d}
+            - [d.mday, class: 'booked min']
+          - elsif @reservations.any? {|e| (e.date_from..e.date_to).max == d}
+            - [d.mday, class: 'booked max']
+          - else
+            - [d.mday, class: 'booked']
+        - else
+         - d.mday
