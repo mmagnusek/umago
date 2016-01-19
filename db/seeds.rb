@@ -9,7 +9,7 @@
 User.delete_all
 
 if Rails.env == 'production'
-  User.create(email: 'admin@umago.cz', password: 'sCPQeoW')
+  User.create(email: 'admin@umago.cz', password: 'sCPQeoWsCP')
 else
   %w(
     apleskac@blueberryapps.com
