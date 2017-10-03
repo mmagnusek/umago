@@ -4,15 +4,13 @@
     .month-calendar
       - date = start + month.months
       = calendar(year: date.year, month: date.month) do |d|
+        - classes = []
         - if @reservations.any? {|e| (e.date_from..e.date_to).include?(d)}
-
+          - classes << 'booked'
           - if @reservations.any? {|e| (e.date_from..e.date_to).min == d} && @reservations.any? {|e| (e.date_from..e.date_to).max == d}
-            - [d.mday, class: 'booked full']
+            - classes << 'full'
           - elsif @reservations.any? {|e| (e.date_from..e.date_to).min == d}
-            - [d.mday, class: 'booked min']
+            - classes << 'min'
           - elsif @reservations.any? {|e| (e.date_from..e.date_to).max == d}
-            - [d.mday, class: 'booked max']
-          - else
-            - [d.mday, class: 'booked']
-        - else
-         - d.mday
+            - classes << 'max'
+        - [d.mday, class: classes.join(' ')]
