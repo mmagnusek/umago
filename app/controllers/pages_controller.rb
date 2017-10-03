@@ -4,4 +4,10 @@ class PagesController < ApplicationController
 
   def price
   end
+
+  def reservation
+    @current_year = Date.current.year
+    @months = [*1..12]
+    @reservations = Reservation.all
+  end
 end

@@ -1,0 +1,29 @@
+.flag
+  background: $green-base
+  padding: 18px
+  color: white
+  text-align: center
+  margin: 40px auto
+  font-size: 160%
+  max-width: 500px
+  position: relative
+  &::before
+    content: ""
+    left: 0
+    top: 0
+    position: absolute
+    height: 100%
+    width: 40px
+    border-style: solid
+    border-width: 40px 0 40px 40px
+    border-color: transparent transparent transparent white
+  &::after
+    content: ""
+    width: 40px
+    right: 0
+    top: 0
+    position: absolute
+    height: 100%
+    border-style: solid
+    border-width: 40px 40px 40px 0
+    border-color: transparent white transparent transparent

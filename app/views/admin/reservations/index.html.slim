@@ -1,0 +1,26 @@
+h1 Listing reservations
+
+table.table
+  thead
+    tr
+      th Date from
+      th Date to
+      th Name
+      th Email
+      th Notice
+      th
+
+  tbody
+    - @reservations.each do |reservation|
+      tr
+        td = reservation.date_from
+        td = reservation.date_to
+        td = reservation.name
+        td = reservation.email
+        td = reservation.notice
+        td
+          = link_to 'Edit', edit_admin_reservation_path(reservation), class: 'btn btn-primary'
+          = link_to 'Destroy', admin_reservation_path(reservation), data: {confirm: 'Are you sure?'}, method: :delete, class: 'btn btn-danger'
+br
+
+= link_to 'New Reservation', new_admin_reservation_path, class: 'btn btn-success'

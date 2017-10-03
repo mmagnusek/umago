@@ -1,0 +1,16 @@
+nav.admin.navbar.navbar-inverse role='navigation'
+  .container
+    .navbar-header
+      button.navbar-toggle.collapsed data-target='#bs-example-navbar-collapse-1' data-toggle='collapse' type='button'
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      = link_to 'Umago.cz', root_path, target: :blank, class: 'navbar-brand'
+
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li = link_to 'Rezervace', admin_reservations_path
+        li = link_to 'Kalendář', admin_calendar_path
+      ul.nav.navbar-nav.navbar-right
+        li = link_to 'Odhlásit se', destroy_user_session_path, method: :delete

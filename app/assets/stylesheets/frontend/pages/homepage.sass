@@ -1,0 +1,103 @@
+.pages-home
+  main
+    .wrapper
+      +make-row(0)
+      .left,
+      .right
+        +make-columns(md6)
+        padding: 0
+
+      .text
+        padding: 30px
+        +render-to(xs)
+          padding: 15px
+        hr
+          border: 1px solid $green-base
+          max-width: 100px
+          margin-left: 0
+      .why
+        position: relative
+        padding-top: 300px
+        .text
+          background: asset_url('address_bg.png')
+          color: white
+          min-height: 300px
+          h3
+            color: white
+        .text
+          padding: 60px
+          position: absolute
+          top: 0
+          +render-to(xs)
+            padding: 30px
+
+        .bg-image
+          min-height: 600px
+          background:
+            image: asset_url('chata.jpg')
+            position: center
+            size: cover
+
+      .about
+        padding-top: 300px
+
+        .text
+          padding: 60px
+          min-height: 300px
+          position: absolute
+          top: 0
+          background: white
+          @extend .arrow-down
+          +render-to(xs)
+            padding: 30px
+
+        .bg-image
+          min-height: 800px
+          background:
+            image: asset_url('bazen.jpg')
+            position: center
+            size: cover
+
+      .rooms
+        min-height: 840px
+        background:
+          image: asset_url('pokoj.jpg')
+          position: center
+          size: cover
+        position: relative
+        .text
+          position: absolute
+          background: white
+          bottom: 0
+          width: 50%
+          text-align: center
+          @extend .arrow-up
+          +render-to(xs, ms)
+            width: 100%
+
+      .neighborhood
+        min-height: 640px
+        position: relative
+        background:
+          image: asset_url('adrspach.jpg')
+          position: center
+          size: cover
+        +render-to(xs, ms)
+          min-height: 900px
+
+        .text
+          position: absolute
+          background: white
+          top: 0
+          right: 0
+          width: 50%
+          text-align: center
+          @extend .arrow-left
+          +render-to(xs, ms)
+            width: 100%
+
+  .info-message
+    margin-top: 60px
+    padding:
+      top: 50px
+      bottom: 50px
