@@ -24,7 +24,7 @@ module Admin
       @reservation = Reservation.new(reservation_params)
 
       if @reservation.save
-        redirect_to admin_reservation_path(@reservation), notice: 'Reservation was successfully created.'
+        redirect_to admin_reservations_path, notice: 'Rezervace byla úspěšně vytvořena.'
       else
         render :new
       end
@@ -32,7 +32,7 @@ module Admin
 
     def update
       if @reservation.update(reservation_params)
-        redirect_to admin_reservation_path(@reservation), notice: 'Reservation was successfully updated.'
+        redirect_to admin_reservations_path, notice: 'Rezervace byla úspěšně upravena.'
       else
         render :edit
       end
@@ -40,7 +40,7 @@ module Admin
 
     def destroy
       @reservation.destroy
-      redirect_to admin_reservations_path, notice: 'Reservation was successfully destroyed.'
+      redirect_to admin_reservations_path, notice: 'Rezervace byla úspěšně smazána.'
     end
 
     private
@@ -49,7 +49,7 @@ module Admin
       end
 
       def reservation_params
-        params.require(:reservation).permit(:date_from, :date_to, :name, :email, :notice)
+        params.require(:reservation).permit(:date_from, :date_to, :name, :email, :notice, :state)
       end
   end
 end

@@ -1,0 +1,11 @@
+cs:
+  activerecord:
+    models:
+      reservation: Rezervace
+    attributes:
+      reservation:
+        date_from: Začátek
+        date_to: Konec
+        name: Jméno
+        notice: Poznámka
+        state: Stav

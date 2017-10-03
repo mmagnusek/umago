@@ -1,13 +1,13 @@
-h1 Listing reservations
+h1 Seznam rezervací
 
 table.table
   thead
     tr
-      th Date from
-      th Date to
-      th Name
-      th Email
-      th Notice
+      th = Reservation.human_attribute_name :date_from
+      th = Reservation.human_attribute_name :date_to
+      th = Reservation.human_attribute_name :name
+      th = Reservation.human_attribute_name :email
+      th = Reservation.human_attribute_name :notice
       th
 
   tbody
@@ -19,8 +19,8 @@ table.table
         td = reservation.email
         td = reservation.notice
         td
-          = link_to 'Edit', edit_admin_reservation_path(reservation), class: 'btn btn-primary'
-          = link_to 'Destroy', admin_reservation_path(reservation), data: {confirm: 'Are you sure?'}, method: :delete, class: 'btn btn-danger'
+          = link_to 'Upravit', edit_admin_reservation_path(reservation), class: 'btn btn-primary'
+          = link_to 'Smazat', admin_reservation_path(reservation), data: {confirm: 'Jste si jistí?'}, method: :delete, class: 'btn btn-danger'
 br
 
-= link_to 'New Reservation', new_admin_reservation_path, class: 'btn btn-success'
+= link_to 'Přidat rezevaci', new_admin_reservation_path, class: 'btn btn-success'
