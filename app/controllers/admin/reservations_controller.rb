@@ -3,11 +3,11 @@ module Admin
     before_action :set_reservation, only: [:show, :edit, :update, :destroy]
 
     def index
-      @reservations = Reservation.all
+      @reservations = Reservation.ordered
     end
 
     def calendar
-      @reservations = Reservation.all
+      @reservations = Reservation.ordered
     end
 
     def show

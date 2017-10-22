@@ -25,11 +25,23 @@
         box-shadow: 0px 0px 0px 2px $green-base inset
 
       .booked
-        background: $red-base
+        background: $booked-color
         color: $gray-base
-        &.min
-          background: linear-gradient(-45deg, $red-base 0%, $red-base 50%, white 50%, white 100%)
-        &.max
-          background: linear-gradient(-45deg, white 0%, white 50%, $red-base 50%, $red-base 100%)
+      .start-booked
+        background: linear-gradient(-45deg, $booked-color 0%, $booked-color 50%, white 50%, white 100%)
+      .end-booked
+        background: linear-gradient(-45deg, white 0%, white 50%, $booked-color 50%, $booked-color 100%)
+        &.start-confirmed
+          background: linear-gradient(-45deg, $confirmed-color 0%, $confirmed-color 50%, $booked-color 50%, $booked-color 100%)
+
+      .confirmed
+        background: $confirmed-color
+        color: $gray-base
+      .start-confirmed
+        background: linear-gradient(-45deg, $confirmed-color 0%, $confirmed-color 50%, white 50%, white 100%)
+      .end-confirmed
+        background: linear-gradient(-45deg, white 0%, white 50%, $confirmed-color 50%, $confirmed-color 100%)
+        &.start-booked
+          background: linear-gradient(-45deg, $booked-color 0%, $booked-color 50%, $confirmed-color 50%, $confirmed-color 100%)
     .monthName
       text-align: center
