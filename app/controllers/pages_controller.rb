@@ -8,6 +8,6 @@ class PagesController < ApplicationController
   def reservation
     @current_year = Date.current.year
     @months = [*1..12]
-    @reservations = Reservation.all
+    @reservations = Reservation.ordered
   end
 end

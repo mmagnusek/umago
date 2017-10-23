@@ -13,8 +13,8 @@ table.table
   tbody
     - @reservations.each do |reservation|
       tr
-        td = reservation.date_from
-        td = reservation.date_to
+        td = l reservation.date_from
+        td = l reservation.date_to
         td = reservation.name
         td = reservation.email
         td = reservation.notice
