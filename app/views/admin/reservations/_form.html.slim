@@ -6,10 +6,11 @@
       .col-md-2 = f.input :date_from, as: :string, input_html: { class: "datepicker" }
       .col-md-2 = f.input :date_to, as: :string, input_html: { class: "datepicker" }
       .col-md-2 = f.input :state, collection: [['Zarezervovaná', :booked], ['Potvrzená', :confirmed]], include_blank: false
-      .col-md-3 = f.input :name
+      .col-md-3 = f.input :phone_number
       .col-md-3 = f.input :email
     .row
-      .col-md-12 = f.input :notice
+      .col-md-4 = f.input :name
+      .col-md-8 = f.input :notice, as: :string
 
   .form-actions
     = f.button :submit, class: 'btn btn-success'

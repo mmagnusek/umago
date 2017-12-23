@@ -6,7 +6,7 @@ table.table
       th = Reservation.human_attribute_name :date_from
       th = Reservation.human_attribute_name :date_to
       th = Reservation.human_attribute_name :name
-      th = Reservation.human_attribute_name :email
+      th = Reservation.human_attribute_name :phone_number
       th = Reservation.human_attribute_name :notice
       th
 
@@ -16,7 +16,7 @@ table.table
         td = l reservation.date_from
         td = l reservation.date_to
         td = reservation.name
-        td = reservation.email
+        td = reservation.phone_number
         td = reservation.notice
         td
           = link_to 'Upravit', edit_admin_reservation_path(reservation), class: 'btn btn-primary'

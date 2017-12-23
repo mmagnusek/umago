@@ -7,5 +7,6 @@ cs:
         date_from: Začátek
         date_to: Konec
         name: Jméno
+        phone_number: Telefonní číslo
         notice: Poznámka
         state: Stav
