@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.2.0'
+
 gem 'autoprefixer-rails'
 gem 'bootstrap-kaminari-views'
 gem 'bootstrap-wysihtml5-rails'
