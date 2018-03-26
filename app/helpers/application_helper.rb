@@ -10,7 +10,11 @@ module ApplicationHelper
       end
     when 2
       first, second = current
-      "end-#{first.state} start-#{second.state}"
+      if first.state == second.state
+        first.state
+      else
+        "end-#{first.state} start-#{second.state}"
+      end
     end
   end
 end
