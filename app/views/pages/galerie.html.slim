@@ -5,6 +5,21 @@
     .neighborhood-row
       .col-md-4
         .panel.panel-default
+          = link_to image_path('header/01.jpg'), data: { fancybox: 'gallery' }
+            .panel-body = image_tag 'header/01_small.jpg'
+
+      .col-md-4
+        .panel.panel-default
+          = link_to image_path('header/03.jpg'), data: { fancybox: 'gallery' }
+            .panel-body = image_tag 'header/03_small.jpg'
+
+      .col-md-4
+        .panel.panel-default
+          = link_to image_path('gallery/MG_7116.jpg'), data: { fancybox: 'gallery' }
+            .panel-body = image_tag 'gallery/MG_7116_small.jpg'
+
+      .col-md-4
+        .panel.panel-default
           = link_to image_path('gallery/MG_7136.jpg'), data: { fancybox: 'gallery' }
             .panel-body = image_tag 'gallery/MG_7136_small.jpg'
 
@@ -20,13 +35,13 @@
 
       .col-md-4
         .panel.panel-default
-          = link_to image_path('gallery/MG_7132.jpg'), data: { fancybox: 'gallery' }
-            .panel-body = image_tag 'gallery/MG_7132_small.jpg'
+          = link_to image_path('gallery/IMG_4770.jpg'), data: { fancybox: 'gallery' }
+            .panel-body = image_tag 'gallery/IMG_4770_small.jpg'
 
       .col-md-4
         .panel.panel-default
-          = link_to image_path('gallery/MG_7135.jpg'), data: { fancybox: 'gallery' }
-            .panel-body = image_tag 'gallery/MG_7135_small.jpg'
+          = link_to image_path('gallery/IMG_4769.jpg'), data: { fancybox: 'gallery' }
+            .panel-body = image_tag 'gallery/IMG_4769_small.jpg'
 
       .col-md-4
         .panel.panel-default
@@ -35,5 +50,10 @@
 
       .col-md-4
         .panel.panel-default
-          = link_to image_path('gallery/MG_7116.jpg'), data: { fancybox: 'gallery' }
-            .panel-body = image_tag 'gallery/MG_7116_small.jpg'
+          = link_to image_path('gallery/MG_7132.jpg'), data: { fancybox: 'gallery' }
+            .panel-body = image_tag 'gallery/MG_7132_small.jpg'
+
+      .col-md-4
+        .panel.panel-default
+          = link_to image_path('gallery/MG_7135.jpg'), data: { fancybox: 'gallery' }
+            .panel-body = image_tag 'gallery/MG_7135_small.jpg'
