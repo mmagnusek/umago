@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.4.3'
+ruby '2.6.6'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-kaminari-views'
@@ -12,7 +12,7 @@ gem 'flutie'
 gem 'jquery-rails'
 gem 'kaminari'
 gem 'metamagic'
-gem 'pg'
+gem 'pg', '~> 0.21.0'
 gem 'rails', '~> 4.2.0'
 gem 'rails-i18n', '~> 4.0.0'
 gem 'sassc-rails'
@@ -37,7 +37,6 @@ end
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
-  gem 'spring'
 end
 
 group :staging, :production do
