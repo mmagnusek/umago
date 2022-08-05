@@ -32,13 +32,16 @@ jobs:
       with:
         ruby-version: 2.6
 
-    - name: Install dependencies
-      run: bundle install
+    - name: Install dependencies Rubocop
+      run: gem install rubocop -v 1.33
+
+    - name: Install dependencies Rubocop code-scanning-rubocop
+      run: gem install code-scanning-rubocop -v 0.6.1
 
     - name: Rubocop run
       run: |
         bash -c "
-          bundle exec rubocop --require code_scanning --format CodeScanning::SarifFormatter -o rubocop.sarif
+          rubocop --require code_scanning --format CodeScanning::SarifFormatter -o rubocop.sarif
           [[ $? -ne 2 ]]
         "
 
