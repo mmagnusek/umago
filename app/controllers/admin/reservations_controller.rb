@@ -1,6 +1,6 @@
 module Admin
   class ReservationsController < AdminController
-    before_action :set_reservation, only: [:show, :edit, :update, :destroy]
+    before_action :set_reservation, only: %i[show edit update destroy]
 
     def index
       @reservations = Reservation.ordered
@@ -10,15 +10,13 @@ module Admin
       @reservations = Reservation.ordered
     end
 
-    def show
-    end
+    def show; end
 
     def new
       @reservation = Reservation.new
     end
 
-    def edit
-    end
+    def edit; end
 
     def create
       @reservation = Reservation.new(reservation_params)

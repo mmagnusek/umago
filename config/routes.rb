@@ -7,9 +7,6 @@ Rails.application.routes.draw do
     root to: 'reservations#index'
   end
 
-  resources :contacts
-
-  get :contact,      path: 'kontakt',   to: 'pages#contact'
   get :galerie,      path: 'galerie',   to: 'pages#galerie'
   get :neighborhood, path: 'okoli',     to: 'pages#neighborhood'
   get :price,        path: 'cenik',     to: 'pages#price'

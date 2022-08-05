@@ -1,8 +1,0 @@
-= simple_form_for @contact || Contact.new, remote: true do |f|
-  .contact-form-wrapper
-    = f.input :name
-    = f.input :email
-    = f.input :content
-
-    .actions
-      = f.button 'submit', class: 'btn-primary'
