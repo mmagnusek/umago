@@ -31,7 +31,11 @@ end
 group :development do
   gem 'awesome_print'
   gem 'better_errors'
+  gem 'code-scanning-rubocop'
   gem 'pry-rails'
+  gem 'rubocop'
+  gem 'rubocop-rails'
+  gem 'rubocop-rspec'
 end
 
 group :development, :test do
