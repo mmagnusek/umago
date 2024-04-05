@@ -44,7 +44,3 @@ group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
 end
-
-group :staging, :production do
-  gem 'rails_12factor'
-end
