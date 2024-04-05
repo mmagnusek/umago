@@ -11,7 +11,6 @@ gem 'dotenv-rails'
 gem 'flutie'
 gem 'jquery-rails'
 gem 'kaminari'
-gem 'metamagic'
 gem 'pg'
 gem 'rails', '~> 6.1.1'
 gem 'rails-i18n'
@@ -20,7 +19,7 @@ gem 'simple_form'
 gem 'slim-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'puma'
-gem 'sprockets', '3.7.2'
+gem 'sprockets'
 gem 'listen'
 gem 'bootsnap'
 gem 'psych', '< 4.0'
@@ -40,7 +39,6 @@ group :development do
   gem 'pry-rails'
 end
 
-group :development, :test do
-  gem 'byebug'
-  gem 'web-console', '~> 2.0'
+group :production do
+  gem 'mini_portile2', '2.8.5' # Required for Heroku deployment
 end

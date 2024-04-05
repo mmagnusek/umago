@@ -4,7 +4,7 @@ html lang='cs'
     meta charset='utf-8'
     link href='//fonts.googleapis.com/css?family=Open+Sans:300,400&subset=latin,latin-ext' rel='stylesheet' type='text/css'
     meta name='viewport' content='width=device-width, initial-scale=1.0'
-    = metamagic site: "Umago", title: [:title, :site], separator: " | "
+    title = page_title app_name: 'Umago'
     = stylesheet_link_tag :application, :media => 'all'
     = csrf_meta_tags
     = render 'analytics'
