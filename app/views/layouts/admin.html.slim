@@ -3,7 +3,7 @@ html
   head
     meta charset='utf-8'
     meta name='viewport' content='width=device-width, initial-scale=1.0'
-    = metamagic site: "Umago.cz", title: [:title, :site], separator: " | "
+    title = page_title app_name: 'Umago'
     = stylesheet_link_tag :admin, media: 'all'
     = csrf_meta_tags
 
