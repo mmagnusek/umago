@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.6.8'
+ruby '3.1.2'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-kaminari-views'
@@ -23,6 +23,7 @@ gem 'puma'
 gem 'sprockets', '3.7.2'
 gem 'listen'
 gem 'bootsnap'
+gem 'psych', '< 4.0'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap-datepicker'
@@ -30,6 +31,7 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-bxslider-4'
   gem 'rails-assets-fancyBox'
   gem 'rails-assets-jquery-ujs'
+  gem 'rails-assets-jquery', '3.7.1'
 end
 
 group :development do
