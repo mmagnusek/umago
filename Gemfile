@@ -22,7 +22,6 @@ gem 'puma'
 gem 'sprockets'
 gem 'listen'
 gem 'bootsnap'
-gem 'psych', '< 4.0'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap-datepicker'
