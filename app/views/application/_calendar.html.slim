@@ -1,7 +1,7 @@
-.booking-calendar
+.booking-calendar.row
   - start = Date.today.beginning_of_month
   - [*0...12].each do |month|
-    .month-calendar
+    .month-calendar.col-sm-4
       - date = start + month.months
       = calendar(year: date.year, month: date.month) do |d|
         - [d.mday, class: calendar_date_class(@reservations, d)]
