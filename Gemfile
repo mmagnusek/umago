@@ -23,14 +23,12 @@ gem 'sprockets'
 gem 'listen'
 gem 'bootsnap'
 
-source 'https://rails-assets.org' do
-  gem 'rails-assets-bootstrap-datepicker'
-  gem 'rails-assets-bootstrap-sass', '3.3.7'
-  gem 'rails-assets-bxslider-4'
-  gem 'rails-assets-fancyBox'
-  gem 'rails-assets-jquery-ujs'
-  gem 'rails-assets-jquery', '3.7.1'
-end
+gem 'cssbundling-rails'
+gem 'importmap-rails'
+gem 'hotwire-rails'
+gem "redis", "~> 4.0" # Use Redis for Action Cable
+gem "stimulus-rails"
+gem "bootstrap", '4.0.0'
 
 group :development do
   gem 'awesome_print'

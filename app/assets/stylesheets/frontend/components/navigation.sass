@@ -1,21 +1,25 @@
 nav
-  @extend .navbar-fixed-top
   position: absolute
-  .nav
+  z-index: 52
+  width: 100%
+  ul.nav
+    margin-top: 10px
+    line-height: 50px
     text-align: center
     li
       display: inline-block
+      padding-top: 10px
       a
+        padding: 10px 15px
         color: white
         &:hover,
         &:focus
           background: transparent
+          text-decoration: none
 
       &.logo
-        +render-to(xs, ms)
-          display: none
-
         position: relative
+        padding-top: 0
         .green
           color: $green-base
         a
@@ -27,5 +31,7 @@ nav
         small
           position: absolute
           white-space: nowrap
-          transform: translateX(-50%) translateY(-50%)
+          transform: translateX(-135%) translateY(70%)
           color: white
+        @include media-breakpoint-down(sm)
+          display: none;

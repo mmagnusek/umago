@@ -1,61 +1,61 @@
 .container
-  .centered
+  .text-center
     h2 Kladské pomezí
     p 
       | Stránky shrnující informace a turistické cíle v okolí. 
       = link_to 'www.kladskepomezi.cz', 'http://www.kladskepomezi.cz/cz/'
 
-    .neighborhood-row
+    .neighborhood-row.row
       .col-md-4
-        .panel.panel-default
+        .card
           = link_to 'http://www.skalyadrspach.cz/', target: :blank
-            .panel-heading
+            .card-heading
               | Adršpach
-              span.label.label-primary< 25km
+              span.badge.badge-primary< 25km
           = link_to 'http://www.skalyadrspach.cz/', target: :blank
-            .panel-body = image_tag 'okoli/adrspach.jpg'
+            .card-body = image_tag 'okoli/adrspach.jpg'
       
       .col-md-4
-        .panel.panel-default
+        .card
           = link_to 'http://www.basen.eurograf.pl/', target: :blank
-            .panel-heading
+            .card-heading
               | Kudowa zdroj
-              span.label.label-primary< 3km
+              span.badge.badge-primary< 3km
           = link_to 'http://www.basen.eurograf.pl/', target: :blank
-            .panel-body = image_tag 'okoli/kudowa-zdroj.jpg'
+            .card-body = image_tag 'okoli/kudowa-zdroj.jpg'
 
       .col-md-4
-        .panel.panel-default
+        .card
           = link_to 'http://www.zoodk.cz/', target: :blank
-            .panel-heading
+            .card-heading
               | Dvůr Králové n/L
-              span.label.label-primary< 30km
+              span.badge.badge-primary< 30km
           = link_to 'http://www.zoodk.cz/', target: :blank
-            .panel-body = image_tag 'okoli/zoodk.jpg'
+            .card-body = image_tag 'okoli/zoodk.jpg'
 
       .col-md-4
-        .panel.panel-default
+        .card
           = link_to 'http://www.zieleniec.pl/', target: :blank
-            .panel-heading
+            .card-heading
               | Zieleniec
-              span.label.label-primary< 20km
+              span.badge.badge-primary< 20km
           = link_to 'http://www.zieleniec.pl/', target: :blank
-            .panel-body = image_tag 'okoli/zieleniec.jpg'
+            .card-body = image_tag 'okoli/zieleniec.jpg'
 
       .col-md-4
-        .panel.panel-default
+        .card
           = link_to 'http://umago.cz/foto/mapa.jpg', target: :blank
-            .panel-heading
+            .card-heading
               | Cyklotrasy
-              span.label.label-primary< 1km
+              span.badge.badge-primary< 1km
           = link_to 'http://umago.cz/foto/mapa.jpg', target: :blank
-            .panel-body = image_tag 'okoli/cyklotrasy.jpg'
+            .card-body = image_tag 'okoli/cyklotrasy.jpg'
 
       .col-md-4
-        .panel.panel-default
+        .card
           = link_to 'http://cz.polandforall.com/bludne-skaly-narodni-park-stolove-hory-gory-stolowe-polsko.html', target: :blank
-            .panel-heading
+            .card-heading
               | Bludné skály
-              span.label.label-primary< 15km
+              span.badge.badge-primary< 15km
           = link_to 'http://cz.polandforall.com/bludne-skaly-narodni-park-stolove-hory-gory-stolowe-polsko.html', target: :blank
-            .panel-body = image_tag 'okoli/bludne-skaly.jpg'
+            .card-body = image_tag 'okoli/bludne-skaly.jpg'

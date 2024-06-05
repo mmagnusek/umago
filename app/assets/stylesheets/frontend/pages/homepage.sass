@@ -1,15 +1,13 @@
 .pages-home
   main
     .wrapper
-      +make-row(0)
       .left,
       .right
-        +make-columns(md6)
         padding: 0
 
       .text
         padding: 30px
-        +render-to(xs)
+        @include media-breakpoint-down(sm)
           padding: 15px
         hr
           border: 1px solid $green-base
@@ -28,7 +26,7 @@
           padding: 60px
           position: absolute
           top: 0
-          +render-to(xs)
+          @include media-breakpoint-down(sm)
             padding: 30px
 
         .bg-image
@@ -48,7 +46,7 @@
           top: 0
           background: white
           @extend .arrow-down
-          +render-to(xs)
+          @include media-breakpoint-down(sm)
             padding: 30px
 
         .bg-image
@@ -72,7 +70,7 @@
           width: 50%
           text-align: center
           @extend .arrow-up
-          +render-to(xs, ms)
+          @include media-breakpoint-down(sm)
             width: 100%
 
       .neighborhood
@@ -82,7 +80,7 @@
           image: asset_url('adrspach.jpg')
           position: center
           size: cover
-        +render-to(xs, ms)
+        @include media-breakpoint-down(sm)
           min-height: 900px
 
         .text
@@ -93,7 +91,7 @@
           width: 50%
           text-align: center
           @extend .arrow-left
-          +render-to(xs, ms)
+          @include media-breakpoint-down(sm)
             width: 100%
 
   .info-message

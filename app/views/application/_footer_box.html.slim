@@ -1,17 +1,18 @@
 .contact
-  .google-map = render 'gmap'
+  .row
+    .google-map.col-md-6 = render 'gmap'
 
-  .address
-    img src='https://bookingawards.simoncelen.net/1/2/9/1293214/social_media.png' width='200' height='200' align='right'
+    .address.col-md-6
+      img src='https://bookingawards.simoncelen.net/1/2/9/1293214/social_media.png' width='200' height='200' align='right'
 
-    h3 Kontaktujte nás
-    ul.list-unstyled
-      li Milan Magnusek
-      li Ve Smrčinách 60
-      li 547 01 Náchod
-      li
-      | (+420) 737 816 210
-      li = mail_to 'umago@seznam.cz'
+      h3 Kontaktujte nás
+      ul.list-unstyled
+        li Milan Magnusek
+        li Ve Smrčinách 60
+        li 547 01 Náchod
+        li
+        | (+420) 737 816 210
+        li = mail_to 'umago@seznam.cz'
 
 .copyright
   p
