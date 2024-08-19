@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get :price,        path: 'cenik',     to: 'pages#price'
   get :reservation,  path: 'rezervace', to: 'pages#reservation'
   get :rooms,        path: 'pokoje',    to: 'pages#rooms'
-  get :wedding,      path: 'svatba',    to: redirect("https://docs.google.com/document/d/1-87nrgS1AHA6CicDae9SGO0p04iEVtFVRqSqkkfFHcE", status: 302)
+  get :wedding,      path: 'svatba',    to: redirect("/svatba-ela-martin.pdf", status: 302)
 
   root to: 'pages#home'
 end
