@@ -5,7 +5,10 @@ html lang='cs'
     link href='//fonts.googleapis.com/css?family=Open+Sans:300,400&subset=latin,latin-ext' rel='stylesheet' type='text/css'
     meta name='viewport' content='width=device-width, initial-scale=1.0'
     title = page_title app_name: 'Umago'
-    = stylesheet_link_tag :application, :media => 'all'
+    = stylesheet_link_tag :application, media: 'all'
+    link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    = javascript_importmap_tags
+    = csp_meta_tag
     = csrf_meta_tags
     = render 'analytics'
 
@@ -17,5 +20,4 @@ html lang='cs'
     main = yield
     footer = render 'footer_box'
 
-    = javascript_include_tag :application
     = yield :javascript
