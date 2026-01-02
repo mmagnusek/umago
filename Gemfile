@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '3.1.2'
+ruby '3.3.6'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-kaminari-views'
