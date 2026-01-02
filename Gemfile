@@ -22,6 +22,7 @@ gem 'puma'
 gem 'sprockets'
 gem 'listen'
 gem 'bootsnap'
+gem 'kamal'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap-datepicker'

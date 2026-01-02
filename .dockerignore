@@ -1,0 +1,58 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Documentation
+README.rdoc
+*.md
+
+# Logs
+log/*
+tmp/*
+*.log
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Kamal
+.kamal/*
+kamal.yml
+
+# Test files
+test/*
+spec/*
+coverage/*
+
+# Development files
+.bundle
+vendor/bundle
+node_modules
+
+# IDE files
+.idea
+.vscode
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+*.gem
+*.rbc
+*.so
+*.o
+*.a
+mkmf.log
+
+# Database
+*.sqlite3
+*.sqlite3-journal
+db/*.sqlite3
+
+# Note: We need app/assets for compilation, so don't exclude them
