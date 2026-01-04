@@ -23,6 +23,7 @@ gem 'sprockets'
 gem 'listen'
 gem 'bootsnap'
 gem 'kamal'
+gem 'thruster', require: false
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap-datepicker'

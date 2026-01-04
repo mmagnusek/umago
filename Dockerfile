@@ -1,66 +1,76 @@
-# Build stage
-FROM ruby:3.3.6-slim AS builder
+# syntax=docker/dockerfile:1
+# check=error=true
 
-# Install build dependencies
+# This Dockerfile is designed for production, not development. Use with Kamal or build'n'run by hand:
+# docker build -t demo .
+# docker run -d -p 80:80 -e RAILS_MASTER_KEY=<value from config/master.key> --name demo demo
+
+# For a containerized dev environment, see Dev Containers: https://guides.rubyonrails.org/getting_started_with_devcontainer.html
+
+# Make sure RUBY_VERSION matches the Ruby version in .ruby-version
+ARG RUBY_VERSION=3.3.6
+FROM docker.io/library/ruby:$RUBY_VERSION-slim AS base
+
+# Rails app lives here
+WORKDIR /rails
+
+# Install base packages
 RUN apt-get update -qq && \
-    apt-get install -y --no-install-recommends \
-    build-essential \
-    libpq-dev \
-    curl \
-    git \
-    nodejs \
-    npm \
-    && rm -rf /var/lib/apt/lists/*
+    apt-get install --no-install-recommends -y curl libjemalloc2 libvips sqlite3 nodejs && \
+    ln -s /usr/lib/$(uname -m)-linux-gnu/libjemalloc.so.2 /usr/local/lib/libjemalloc.so && \
+    rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
-WORKDIR /app
+# Set production environment variables and enable jemalloc for reduced memory usage and latency.
+ENV RAILS_ENV="production" \
+    BUNDLE_DEPLOYMENT="1" \
+    BUNDLE_PATH="/usr/local/bundle" \
+    BUNDLE_WITHOUT="development" \
+    LD_PRELOAD="/usr/local/lib/libjemalloc.so"
 
-# Install gems
-COPY Gemfile Gemfile.lock ./
-RUN bundle config set --local deployment 'true' && \
-    bundle config set --local without 'development test' && \
-    bundle config set --local path '/usr/local/bundle' && \
-    bundle install --jobs=4 --retry=3 && \
-    rm -rf ~/.bundle/ /usr/local/bundle/cache /usr/local/bundle/bundler/gems/*/.git
+# Throw-away build stage to reduce size of final image
+FROM base AS build
+
+# Install packages needed to build gems
+RUN apt-get update -qq && \
+    apt-get install --no-install-recommends -y build-essential git libyaml-dev pkg-config && \
+    rm -rf /var/lib/apt/lists /var/cache/apt/archives
+
+# Install application gems
+COPY Gemfile Gemfile.lock vendor ./
+
+RUN bundle install && \
+    rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git && \
+    # -j 1 disable parallel compilation to avoid a QEMU bug: https://github.com/rails/bootsnap/issues/495
+    bundle exec bootsnap precompile -j 1 --gemfile
 
 # Copy application code
 COPY . .
 
-# Precompile assets
-RUN RAILS_ENV=production SECRET_KEY_BASE=dummy bundle exec rails assets:precompile
+# Precompile bootsnap code for faster boot times.
+# -j 1 disable parallel compilation to avoid a QEMU bug: https://github.com/rails/bootsnap/issues/495
+RUN bundle exec bootsnap precompile -j 1 app/ lib/
 
-# Runtime stage
-FROM ruby:3.3.6-slim AS base
+# Precompiling assets for production without requiring secret RAILS_MASTER_KEY
+RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
 
-# Install runtime dependencies only
-RUN apt-get update -qq && \
-    apt-get install -y --no-install-recommends \
-    libpq-dev \
-    curl \
-    && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /app
 
-# Create a non-root user first
-RUN groupadd -r rails && useradd -r -g rails rails
 
-# Copy gems from builder
-COPY --from=builder /usr/local/bundle /usr/local/bundle
+# Final stage for app image
+FROM base
 
-# Copy application code
-COPY --from=builder /app /app
+# Run and own only the runtime files as a non-root user for security
+RUN groupadd --system --gid 1000 rails && \
+    useradd rails --uid 1000 --gid 1000 --create-home --shell /bin/bash
+USER 1000:1000
 
-# Create necessary directories and set permissions
-RUN mkdir -p tmp/pids tmp/cache log storage && \
-    chown -R rails:rails /app
+# Copy built artifacts: gems, application
+COPY --chown=rails:rails --from=build "${BUNDLE_PATH}" "${BUNDLE_PATH}"
+COPY --chown=rails:rails --from=build /rails /rails
 
-USER rails
+# Entrypoint prepares the database.
+ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
-# Expose port (Kamal will set PORT env var, default is 80 with proxy)
-EXPOSE 3000
-
-# Health check (Kamal sets PORT=80 by default when using proxy)
-HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-  CMD sh -c 'curl -f http://localhost:${PORT:-3000}/up || exit 1'
-
-# Default command
-CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
+# Start server via Thruster by default, this can be overwritten at runtime
+EXPOSE 80
+CMD ["./bin/thrust", "./bin/rails", "server"]
