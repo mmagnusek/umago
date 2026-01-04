@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '3.1.2'
+ruby '3.3.6'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-kaminari-views'
@@ -12,7 +12,7 @@ gem 'flutie'
 gem 'jquery-rails'
 gem 'kaminari'
 gem 'pg'
-gem 'rails', '~> 7.1.1'
+gem 'rails', '~> 8.1.0'
 gem 'rails-i18n'
 gem 'sassc-rails'
 gem 'simple_form'
@@ -22,6 +22,8 @@ gem 'puma'
 gem 'sprockets'
 gem 'listen'
 gem 'bootsnap'
+gem 'kamal'
+gem 'thruster', require: false
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap-datepicker'
